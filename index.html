@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data Science Portfolio | Tasha Gautam</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro" style="position: relative;">
+						<p></p>
+						<img src="home-page-ds.jpeg" alt="" style="width: 80%; margin: 0; padding: 0; opacity: 0.1;" />
+    <h1 style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: 1; font-size: 60px; color: rgb(249, 252, 251); text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)"> Hi, I am Tasha!
+		<br> <br> <br> <span style="font-size: 40px;color: rgb(163, 219, 211); text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)">Welcome to my Data Science portfolio.</span></h1>
+						
+						<h2> </p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+									<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo" >Tasha Gautam</a>
+				</header>
+
+				saveScrollPosition();
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							
+							<li class = "active"><a href="index.html" onclick="saveScrollPosition();">Home</a></li>
+							<li><a href="about.html" onclick="saveScrollPosition();">About</a></li>
+							<li><a href="all-projects.html" onclick="saveScrollPosition();">All Projects</a></li>
+							<li><a href="resume.html" onclick="saveScrollPosition();">Resume</a></li>
+							<li><a href="contact.html" onclick="saveScrollPosition();">Contact</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+					<script>
+						// Function to store the scroll position in a session storage
+						function saveScrollPosition() {
+							sessionStorage.setItem("scrollPosition", window.scrollY);
+						}
+					
+						// Function to retrieve and set the scroll position from the session storage
+						function restoreScrollPosition() {
+							var scrollPosition = sessionStorage.getItem("scrollPosition");
+							if (scrollPosition) {
+								window.scrollTo(0, parseInt(scrollPosition));
+							}
+							return false;
+						}
+					
+						// Call the function to restore the scroll position when the page loads
+						restoreScrollPosition();
+					</script>
+					
+				<!-- Main -->
+					<div id="main">
+						<h3>Recent projects: </h3>
+						<!-- Posts -->
+							<section class="posts">
+								
+								<article>
+									<header>
+										<h2><a href="ChatGPT.html">Project I: Sentiment Analysis of ChatGPT tweets<br />
+										</a></h2>
+									</header>
+									<a href="ChatGPT.html" class="image fit"><img src="images-chatgpt/ChatGPT-WordCloud-byTasha.png" alt="" /></a>
+									<p> In this project, I perform the sentiment analysis of tweets on CHAT GPT. 
+										I cleaned and pre-process the tweets (using bag-of-words model) and determined the sentiment of each tweet using two different methods.
+										 I created 4 different classification models [Logistical Regression, 
+										 Multinomial Naive Bayes, Support Vector Machine (SVM), and Random Forest] 
+										 and compared them to determine the best performing model.
+
+									</p>
+									<ul class="actions special">
+										<li><a href="ChatGPT.html" class="button">Read More</a>
+										
+										</li>
+										
+									</ul>
+								</article>
+								<article>
+									<header>
+									
+										<h2><a href="E-com.html">Project II: Sentiment analysis of customer reviews</a></h2>
+									</header>
+									<a href="E-com.html" class="image fit"><img src="images-e-com/E-com-rev-WordCloud-byTasha.png" alt="" /></a>
+									<p>In this project, I perform sentiment analysis of reviews by customers of an E-commerce women's clothing brand. After cleaning and pre-processing the reviews, I used two vectorisation approaches: bag-of-words and TF-IDF to do word vectorisation. I trained the reviews on 4 classification models to determine the best performing model.</p>
+									<ul class="actions special">
+										<li><a href="E-com.html" class="button">Read More</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="Stock-price.html">Project III: Stock price prediction - Time series analysis<br />
+										</a></h2>
+									</header>
+									<a href="Stock-price.html" class="image fit"><img src="images-stock/Forecast.png" alt="" /></a>
+									<p>In this project, I analyse closing stock price trend with 7 years of data for FAANG companies (starting with Amazon). I used ARIMA and SARIMA models to fit the time series and forecast the stock price of Amazon for 1 year in future.</p>
+									<ul class="actions special">
+										<li><a href="Stock-price.html" class="button">Read More</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="titanic.html">Project IV: Survival prediction for Titanic passengers<br />
+										</a></h2>
+									</header>
+									<a href="titanic.html" class="image fit"><img src="male-fem-tatanic-bar.png" alt="" /></a>
+									<p>In this project, I used different machine learning models to predict the survival of passengers based on various features in the dataset. 
+										I performed One-hot encoding, feature removal, feature scaling on the features and trained four machine learning models on the data-set: Logistic regression, Kernal SVM, Decision tree, Random forest. I then identify the best performing model using Grid search and K-fold cross validation and make the prediction for test data.
+									</p>
+									<ul class="actions special">
+										<li><a href="titanic.html" class="button">Read More</a></li>
+									</ul>
+								</article>
+						
+								
+							
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>200 Dufferin Street<br />
+								Toronto, Ontario, M6K 1Z4</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(+1) 434-760-9111</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">16.tasha@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

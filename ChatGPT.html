@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sentiment Analysis of CHATGPT tweets</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Massively</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Sentiment Analysis of CHATGPT tweets<br />
+									</h1>
+									<p>In this project, I perform the sentiment analysis of tweets about CHAT GPT from three months of data (Jan-Mar 2023). </p>
+								</header>
+								<div class="image main"><img src="images-chatgpt/ChatGPT-WordCloud-byTasha.png" alt="" /></div>
+								<h2>Data</h2>
+								<ul>
+								<li>The data for this project was taken from Kaggle.</li>
+								<li>The tweets are not labelled with any sentiment in this data-set </li> </ul>
+								<h2>Pre-processing</h2>
+								<ul>The data was first checked for duplicates and missing values. Like and Retweet counts were evaluated over time (time-series-analysis is presented in a separate notebook on Github).
+									<div class="image-gallery">
+										<img src="images-chatgpt/Like count over time.png" alt="" style="width:70%"/>
+										<img src="images-chatgpt/Retweet count over time.png" alt="" style="width:70%"/>
+										<div class="clear"></div>
+										</div>
+							    <p> To clean each tweet, the content of the tweet was: </br>
+								<li>Tokenized</li>
+								<li>Removed of any usernames (starting with @), and punctuations </li>
+								<li> Passed through Lemmatization </li>
+								<li> Removed off rare-words and stop words</li>
+								</ul>
+								<h2>Polarity determination</h2>
+								<ul>
+								<p> I determined the polarity and evaluated the sentiment score of each tweet from its content using two different tools: NLTK's TextBlob and VaderSentiment Analysis.  </p>
+								<li> TextBlob: I first executed POS (Part-of-Speech) tagging for each tweet, also done by separating each sentence from individual tweet. The adjectives from each tweet are then separated. The polarity is then calculated using TextBlob based on the adjectives of each tweet.
+								</li>
+							<li>Vader sentiment analysis: The content was cleaned but no punctuations were removed here such that the tool can read the sentiments accurately for each tweet. The polarity score was then calculated.</li>
+							<div class="image-gallery">
+								<img src="images-chatgpt/Polarity-distb-textblob.png" alt="" style="width:70%"/>
+								<img src="images-chatgpt/Polarity-distb-Vader.png" alt="" style="width:70%"/>
+								<div class="clear"></div>
+								</div>
+							<p> The sentiments from both the tools were then compared and visualised to check if there exist any variation in the frequency of tweet and sentiment value over the three months. Since neutral sentiments were overpowering the overall distribution, I chose to ignore it in this analysis. 
+								The sentiment distribution is shifted towards positive with the mean at 0.18 if only adjectives are considered.
+
+							</p>
+							<div class="image-gallery">
+								<img src="images-chatgpt/Histogram-polarity-textblob.png" alt="" style="width:70%"/>
+								
+								
+								<div class="clear"></div>
+								</div>
+
+							<p>Wordclouds of both positive and negative sentiments in the tweets were made, this was especially useful after separating the adjectives from each tweet.</p>
+							<div class="image-gallery">
+								<img src="images-chatgpt/ChatGPT-WordCloud-positive-byTasha.png" alt="" style="width:70%"/>
+								<img src="images-chatgpt/ChatGPT-WordCloud-negative-byTasha.png" alt="" style="width:70%"/>
+								
+								<div class="clear"></div>
+								</div>
+ 
+							<h2>Application of classification models</h2>
+<li>To do a predictive analysis and train ML models, the data was split into test and training data.
+</li>
+<li>The training data was converted in a set of vectors using Count Vectorizer [or bag-of-words model]</li>
+
+<li>This was then used to train four ML classification models: Logistical Regression, Multinomial Naive Bayes, Support Vector Machine (SVM), and Random Forest.
+</li>
+<li>K-Fold cross validation was performed on each model (with different metrics) with test data.
+</li>
+<li>F1 Score, Recall, and Average precision scores were calculated for the test data. </li>
+<li>The best perfoming model was SVM and Logistic Regression.</li> 
+<li> Visualised the average scores for each of these models.</li>
+<div class="image-gallery">
+	<img src="images-chatgpt/compare-models-all.png" alt="" style="width:70%"/>
+	<img src="images-chatgpt/compare-models-mean-all.png" alt="" style="width:70%"/>
+	<div class="clear"></div>
+	</div>
+<li>Prediction for some sample tweets was performed using these models.</li>
+</br>
+<p><a href="https://github.com/tgautam16/Sentiment_analysis_ChatGPT">Link to Github Repository</a></p>
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

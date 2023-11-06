@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Stock price prediction - Time Series Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Massively</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Stock price prediction - Time Series Analysis<br />
+									</h1>
+									<p>In this project, I analyse closing stock price trend with 7 years of data for FAANG companies. I used ARIMA and SARIMA models to fit the time series and forecast the future stock price trend. </p>
+								</header>
+                                
+								<div class="image main"><img src="images-stock/Forecast.png" alt="" /></div>
+								<h2>Data</h2>
+								<ul>
+                                    <p> </p>
+								<li>The data for this project was taken from Kaggle</li>
+			
+								<p>Below I describe the analysis for closing stock price of Amazon: </p> </ul>
+								<div class="image-gallery">
+									<img src="images-stock/Close Stock price.png" alt="" style="width:70%"/>
+									<div class="clear"></div>
+									</div>
+                                <h2>Time series analysis and model fit</h2>
+                                <ul>
+                                    <p> </p>
+                            <li> Visualised and made density plots of stock prices, to see any visual trends </li>
+                        <li> Observed moving variance and moving mean in the time series </li>
+                    <li>Confirmed and quantified this result through large p-value from ADF Test</li>
+                    <li>Checked trends by decomposing the series</li>
+                <li>Used two methods to remove trends:</li>
+            <li>Took Log of the series to remove varying variance in the series</li>
+            <ul class = ""> 
+                <li>Took 1st difference</li>
+                <li>Took difference with moving average</li></ul>
+            
+<li>Both resulted in low p-val from Augmented Dickey-Fuller(ADF) Test</li>
+<p> Residual plot from ADF test: </p>
+<div class="image-gallery">
+	<img src="images-stock/ADF_test.png" alt="" style="width:70%"/>
+	
+	
+	<div class="clear"></div>
+	</div>
+<li>Created correlograms with both time series using ACF and PACF to determine the significant lags</li>
+<li>Time series with Method 1:</li>
+<ul class = "square">
+    <li>Found Significant lag at 11 months and 16 months in PACF</li>
+    <ul class = "square">
+        <li>Implies AR model can be used to fit the data</li>
+        </ul></ul>
+            <li>Time series with Method 2:</li>
+            <ul class = "square">
+                <li>Found significant lag at 16 months in PACF</li>
+                <ul class = "square">
+                    <li>Implies AR model can be used to fit the data</li>
+                    </ul></ul>
+                        <li>We will first try to fit the series with ARIMA model</li>
+                            <li>Proceeded to run ARIMA model with 16 months lag</li>
+                                <li>Looking at the p-value of each lag, we see LAG of 11 months is the only significant lag for ARIMA model</li>
+                                    <li>I then check the prediction of the model on test data, and plot the residuals obtained between the prediction and test data</li>
+                                        <li>I then ran auto-ARIMA model to check the results from the optimum number of lags</li>
+                                        <ul class = "square">    
+                                        <li>Optimum model found is : (0,1,0)(1,1,0,12) ==> Seasonal Differencing is found in the time series</li>
+                                        </ul>
+                                                <li>Plotted prediction on test data</li>
+												<div class="image-gallery">
+													<img src="images-stock/Stock prediction ARIMA model.png" alt="" style="width:70%"/>
+													<img src="images-stock/Stock price prediction with auto ARIMA model.png" alt="" style="width:70%"/>
+													
+													<div class="clear"></div>
+													</div>
+                                                    <li>Also performed training with SARIMA model</li>
+													
+                                                        <li>Determined forecast with 90% Confidence by training on all the data</li>
+                                                        <ul class = "square">
+                                                            <li>Predicted rolling origin forecast and 1 year of forecast in future with 90% Confidence interval</li>
+                                                            </ul>
+															<div class="image-gallery">
+																<img src="images-stock/Stock price SARIMA.png" alt="" style="width:70%"/>
+																<img src="images-stock/Rolling Origin Forecast with SARIMA model.png" alt="" style="width:70%"/>
+																<img src="images-stock/Forecast.png" alt="" style="width:70%"/>
+																
+																<div class="clear"></div>
+																</div>
+                        </ul>
+                                </br>
+<p><a href="https://github.com/tgautam16/Time-Series-Analysis">Link to Github Repository</a></p>
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

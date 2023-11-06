@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sentiment Analysis of E-commerce brand's customer reviews</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Massively</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Sentiment analysis of customer reviews<br />
+									</h1>
+									<p>In this project, I perform sentiment analysis of reviews by customers of an E-commerce women's clothing brand. After cleaning and pre-processing the reviews, I used two vectorisation approaches: bag-of-words and TF-IDF to do word vectorisation. I trained the reviews on 4 classification models to determine the best performing model. </p>
+								</header>
+								<div class="image main"><img src="images-e-com/E-com-rev-WordCloud-byTasha.png" alt="" /></div>
+								<h2>Data</h2>
+								<ul>
+								<li>The data for this project was taken from Kaggle.</li>
+								<li>The data-set is labelled in two classes: "Recommended: 1" and "Not Recommended: 0"</li> </ul>
+								<h2>Pre-processing</h2>
+                                <ul>Cleaned and analysed each available feature, checked their variations using histogram with the recommended and non-recommneded labels for the dataset closely.</ul>
+								<ul>The data was then checked for duplicates and missing values.
+							    <p> To clean each review, the content of the tweet was: </br>
+								<li>Tokenized</li>
+								<li>Removed of any usernames (starting with @), and punctuations </li>
+								<li> Passed through Lemmatization </li>
+								<li> Removed off rare-words and stop words</li>
+                                </ul>
+						
+                                <div class="image-gallery">
+                                    <img src="images-e-com/class.png" alt="" style="width:70%"/>
+                                    <img src="images-e-com/histo-classes.png" alt="" style="width:70%"/>
+                                    <img src="images-e-com/histo-ages.png" alt="" style="width:70%"/>
+                                    <img src="images-e-com/histo-depts.png" alt="" style="width:70%"/>
+                                    <img src="images-e-com/heatmap_plot.png" alt="" style="width:70%"/>
+                                    <div class="clear"></div>
+                                    </div>
+							<p>I then made the wordclouds for both recommended and non-recommended reviews to check words with extreme emotions.</p>
+							<div class="image-gallery">
+								<img src="images-e-com/E-com-WordCloud-positive-byTasha.png" alt="" style="width:70%"/>
+								<img src="images-e-com/E-com-WordCloud-negative-byTasha.png" alt="" style="width:100%"/>
+								
+								<div class="clear"></div>
+								</div>
+ 
+							<h2>Application of classification models</h2>
+<li>To do a predictive analysis and train ML models, the data was split into test and training data.
+</li>
+<li>The training data was converted in a set of vectors using two different methods: 
+</li> 1. Count Vectorizer [or bag-of-words model]</li> <br>
+2. TF-IDF Vectorizer
+<li>Each of these sets of training data are then used to train four ML classification models: Logistical Regression, Multinomial Naive Bayes, Support Vector Machine (SVM), and Random Forest.
+</li>
+<li>K-Fold cross validation was performed on each model (with different metrics) with test data.
+</li>
+<li>F1 Score, Recall, and Average precision scores were calculated for each test set.</li>
+<li>The mean of F1 Score, Recall, and Average precision scores are used to determine the best perfoming model, which turned out to be Logistic Regression for all the metrics.</li> 
+<li> Visualised the average scores for each of these models.</li>
+<div class="image-gallery">
+	<img src="images-e-com/AP-all.png" alt="" style="width:70%"/>
+	<img src="images-e-com/compare-models-all.png" alt="" style="width:70%"/>
+	<div class="clear"></div>
+	</div>
+<li>Prediction for some sample tweets was performed using these models.</li>
+</br>
+<p><a href="https://github.com/tgautam16/Sentiment_analysis_e-commerce">Link to Github Repository</a></p>
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

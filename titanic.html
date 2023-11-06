@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Prediction for survival of Titanic passengers</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Massively</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Prediction for survival of Titanic passengers<br />
+									</h1>
+									<p>In this project, I used different machine learning models to predict the survival of passengers based on various features in the dataset.  </p>
+								</header>
+								<div class="image main"><img src="male-fem-tatanic-bar.png" alt="" /></div>
+								<h2>Data</h2>
+								<ul>
+								<li>The data for this project was taken from Kaggle.</li>
+								<li>The data-set is labelled in two classes: "Survived: 1" and "Not survived: 0"</li> </ul>
+								<h2>Step 1</h2>
+                                
+<li>Identified the discrepency between male and female passengers survival rates. Looked at each feature independently.
+</li>
+<h2>Step 2</h2>
+<li>
+Performed One-hot encoding, feature removal, feature scaling on the features of the data-set.
+</li>
+<h2>Step 3</h2>
+<li>Trained four different machine learning models on the data-set: Logistic regression, Kernal SVM, Decision tree, Random forest.
+</li>
+<h2>Step 4</h2>
+<li>Performed grid search and k-fold cross validation to estimate accuracy for each model in predicting the survival for test data.
+</li>
+
+<h3>Best performing model came out to be Random Forest with a mean accuracy score of 84%. </h3>
+<br>
+<h3>Some visualisations from the project:</h3>
+                                </ul>
+                                <p>Distribution of titles in the names of passengers: </p>
+                                <div class="image-gallery">
+                                    <img src="titles-titanic.png" alt="" style="width:70%"/>
+                                    <img src="male-fem-titanic.png" alt="" style="width:70%"/>
+                                    <img src="age-titanic.png" alt="" style="width:70%"/>
+                                    <p> Discrepency in the survival based on the ticket class: 1st class passengers have a higher survival rate.</p>
+                                    <img src="class-cross-titanic.png" alt="" style="width:70%"/>
+                                   
+                                    <div class="clear"></div>
+                                    </div>
+							<p>Survival ratio of Training and predicted data set:  </p>
+							<div class="image-gallery">
+								<img src="train-titanic.png" alt="" style="width:40%"/>
+                                <img src="pred-titanic.png" alt="" style="width:40%"/>
+								<div class="clear"></div>
+								</div>
+ 
+							
+
+
+<p><a href="https://github.com/tgautam16/titanic-disaster-ML">Link to Github Repository</a></p>
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

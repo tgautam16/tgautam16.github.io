@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<script>
+		// Function to scroll to the specific <nav> element
+		function scrollToMyNav() {
+			var myNav = document.getElementById("arrowLink");
+			if (myNav) {
+				myNav.scrollIntoView();
+			}
+		}
+	
+		// Call the function when the page loads
+		window.onload = scrollToMyNav;
+	</script>
+	<head>
+		<title>Data Science Portfolio | Tasha Gautam</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro" style="position: relative;">
+						<p></p>
+						<img src="home-page-ds.jpeg" alt="" style="width: 80%; margin: 0; padding: 0; opacity: 0.1;" />
+    <h1 style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: 1; font-size: 60px; color: rgb(249, 252, 251); text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)"> Hi, I am Tasha!
+		<br> <br> <br> <span style="font-size: 40px;color: rgb(163, 219, 211); text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)">Welcome to my Data Science portfolio.</span></h1>
+						
+						<h2> </p>
+						<ul class="actions">
+							<li><a href="#header" id="arrowLink" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+									<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo" >Tasha Gautam</a>
+				</header>
+
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							
+							<li><a href="index.html" onclick="saveScrollPosition();">Home</a></li>
+							<li class = "active"><a href="about.html" onclick="saveScrollPosition();">About</a></li>
+							<li><a href="all-projects.html" onclick="saveScrollPosition();">All Projects</a></li>
+							<li><a href="resume.html" onclick="saveScrollPosition();">Resume</a></li>
+							<li><a href="contact.html" onclick="saveScrollPosition();">Contact</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+					<script>
+						// Function to store the scroll position in a session storage
+						function saveScrollPosition() {
+							sessionStorage.setItem("scrollPosition", window.scrollY);
+						}
+					
+						// Function to retrieve and set the scroll position from the session storage
+						function restoreScrollPosition() {
+							var scrollPosition = sessionStorage.getItem("scrollPosition");
+							if (scrollPosition) {
+								window.scrollTo(0, parseInt(scrollPosition));
+							}
+						}
+					
+						// Call the function to restore the scroll position when the page loads
+						restoreScrollPosition();
+					</script>
+				
+                   
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Posts -->
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                            }
+                    
+                       
+                    
+                            article {
+                                margin: 20px 0;
+                            }
+                    
+                            h2 {
+                                margin: 0;
+                            }
+                    
+                            p {
+                                margin: 10px 0;
+                            }
+                        </style>
+				
+
+                        <div style="display: flex; align-items: center;">
+                            <div style="flex: 3; margin-right: 40px;">
+                          
+                        
+
+<h3> About Me</h3> 
+
+<h3>My journey from Cosmos 🌌 to Data Science 📊 </h3>
+
+<div style="display:flex;">
+    <div style="flex: 2;">
+Working with the largest datasets in astronomy, in the realm of radio astronomy, I've come to appreciate the immense power that data analysis brings. With a Ph.D. in astrophysics and five years of hands-on experience managing these massive datasets, I've honed my problem-solving skills in the 
+enchanting world of Cosmos. <br>
+While my journey in astronomy was filled with the fascination of pure research, it has ignited a fervor within me for data science and its potential to address real-world challenges with problems that are more closer to Earth, problems that truly impact the society.
+<br>
+Now, embarking on this new journey of Data Science, I'm brimming with enthusiasm to apply my expertise in identifying data-driven insights to make a tangible difference and contribute to the real-world problems. My unique perspective, combined with a creative acumen and a strong foundation in data analysis and scientific exploration, positions me as a valuable asset in the field of data science.
+</div>
+<div style="flex: 1">
+    <a class="image" style="display: inline-block; overflow: hidden; border: 3px solid #000; border-radius: 70%;">
+        <img src="picture tasha highres new.jpg" alt="" style="width: 100%; border: none; margin: 0; border-radius: 70%;" />
+    </a>
+</div>
+</div>
+<br>
+<br>
+<h3>📡 Expertise </h3> I bring extensive experience in handling, analyzing, and visualizing complex, massive datasets, developing ETL pipelines, and optimizing CPU/GPU allocation. In addition to these skills, my expertise extends to statistics, machine learning, and Python programming. I'm also well-versed in managing pipeline executions through HPC using the SLURM workload manager. Some of my significant work includes discovering six new neutron stars and detecting new physical phenomena in two stellar systems, all within time-series data from telescopes. These contributions have been showcased in 12 research papers with more than 350 citations.
+<br>
+<br>
+<h3>🚀 Leadership and Soft Skills </h3> Leading data-driven projects, collaborating with diverse teams, and effective communication are integral to my skill set. My experience in independent, self-reliant work on research projects highlights my leadership skills that I bring to the field of data science.
+                            </div>
+                            
+                        </div>
+
+                            
+                            <section>
+                                <h3>Email</h3>
+                                <p><a href="#">16.tasha@gmail.com</a></p>
+                            </section>
+                            <section>
+                                <h3>Social</h3>
+                                <ul class="icons alt">
+                                    <li><a href="www.linkedin.com/in/tasha-gautam-phd-80567885" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+                                    <li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                                </ul>
+                            </section>
+                        </div>
+						
+								
+							
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>200 Dufferin Street<br />
+								Toronto, Ontario, M6K 1Z4</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(+1) 434-760-9111</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">16.tasha@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
