@@ -41,7 +41,7 @@
 									
 									<h1>Stock price prediction - Time Series Analysis<br />
 									</h1>
-									<p>In this project, I analyse closing stock price trend with 7 years of data for FAANG companies. I used ARIMA and SARIMA models to fit the time series and forecast the future stock price trend. </p>
+									<p>In this project, I analysed stock prices from 7 years of data of FAANG companies. I used the time-series to model ARIMA, SARIMA, and Prophet models and forecasted the future stock price trend for Amazon. </p>
 								</header>
                                 
 								<div class="image main"><img src="images-stock/Forecast.png" alt="" /></div>
@@ -49,13 +49,59 @@
 								<ul>
                                     <p> </p>
 								<li>The data for this project was taken from Kaggle</li>
-			
-								<p>Below I describe the analysis for closing stock price of Amazon: </p> </ul>
+								<h2> Comparative analysis of FAANG companies:</h2>
+								<div class="image-gallery">
+									<img src="images-stock/comparative/Closing Stock price.png" alt="" style="width:70%"/>
+									<img src="images-stock/comparative/Daily trade volume.png" alt="" style="width:70%"/>
+									<img src="images-stock/comparative/Daily return price averaged weekly.png" alt="" style="width:70%"/>
+									
+									<div class="clear"></div>
+									</div>
+									<p>Netflix has the most variation of all these in the daily return price.</p>
+									<p> Next, I see if the stock price of these companies are correlated with each other.</p>
+									<div class="image-gallery">
+										<img src="images-stock/comparative/stocks-pairplot.png" alt="" style="width:40%"/>
+										<img src="images-stock/comparative/stocks-heatmap.png" alt="" style="width:40%"/>
+								
+										<div class="clear"></div>
+										</div>
+									
+											<p>There is maximum correlation between stock price of Amazon and Netflix, and Google and Facebook</p>
+								<p> Analysing now the daily return of each stock for these companies: </p>
+								<div class="image-gallery">
+									<img src="images-stock/comparative/daily-return-pairplot.png" alt="" style="width:40%"/>
+									<img src="images-stock/comparative/daily-return-heatmap.png" alt="" style="width:40%"/>
+							
+									<div class="clear"></div>
+									</div>
+<p>Maximum correlation on daily return is between Amazon and Google, 
+	 there is also some between google and facebook</p>
+<h3> STOCK PRICE GROWTH in the last 4 years:</h3>
+
+<div class="image-gallery">
+	<img src="images-stock/comparative/growth-percent-allcomps.png" alt="" style="width:70%"/>
+	
+	<div class="clear"></div>
+	</div>
+	<p>Maximum Growth is of Apple and second place is held by Netflix.</p>
+
+<p>Daily return of any stock price is 0%, I check this by creating a histogram of daily return of stock prices: </p>
+<div class="image-gallery">
+	<img src="images-stock/comparative/Histogram-return-Facebook.png" alt="" style="width:45%"/>
+	<img src="images-stock/comparative/Histogram-return-Amazon.png" alt="" style="width:45%"/>
+	<img src="images-stock/comparative/Histogram-return-Apple.png" alt="" style="width:45%"/>
+	<img src="images-stock/comparative/Histogram-return-Netflix.png" alt="" style="width:45%"/>
+	<img src="images-stock/comparative/Histogram-return-Google.png" alt="" style="width:45%"/>
+	<div class="clear"></div>
+	</div>
+
+<h2>Time series analysis and stock price forecasting: </h2>
+									<h3>Below I describe the time-series analysis and prediction for the closing stock price of Amazon: </h2> </ul>
 								<div class="image-gallery">
 									<img src="images-stock/Close Stock price.png" alt="" style="width:70%"/>
 									<div class="clear"></div>
 									</div>
-                                <h2>Time series analysis and model fit</h2>
+                                
                                 <ul>
                                     <p> </p>
                             <li> Visualised and made density plots of stock prices, to see any visual trends </li>
@@ -117,7 +163,18 @@
 																
 																<div class="clear"></div>
 																</div>
+															<h3> Fitting PROPHET time-series model to the data-set:</h3>
                         </ul>
+						<p> <i>"Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. It works best with time series that have strong seasonal effects and several seasons of historical data."</i> </p>
+						<div class="image-gallery">
+						<img src="images-stock/stk-prophet-forecast.png" alt="" style="width:70%"/>
+						
+						<div class="clear"></div>
+						</div>
+						<p> Stock price forecast using Prophet model.</p>
+
+						<p> I finally calculated Normalised Root-Mean-Squared (NRMSE) value for each model's prediction on the test dataset. Both Prophet and Auto-Arima models performed 
+							good in fitting for seasonality and trends in the data-set.</p>
                                 </br>
 <p><a href="https://github.com/tgautam16/Time-Series-Analysis">Link to Github Repository</a></p>
 
