@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Massively</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Unlocking Einstein's Puzzle: Discovering Time Bends in Celestial Duets! <br />
+									</h1>
+									<p>In this project, I analysed 13 years (several TBs) of time-series data and employed statistical techniques to detect Einstein's relativistic effect (Shapiro Delay) in a Neutron Star-White Dwarf star system.</p>
+									<p><a href="https://arxiv.org/pdf/2311.13563.pdf">Link to paper</a></p>
+								</header>
+                                
+								<div class="image main"><img src="images-shapiro-1012/NS-binary.jpg" alt="" /></div>
+								
+								
+							
+									<style>
+										/* Add your preferred styling here */
+										.insight-box {
+											border: 2px solid #007BFF; /* Change color as needed */
+											border-top-width: 4px; /* Bold border at the top */
+											padding: 20px;
+											margin-top: 20px;
+											background-color: #f0f8ff; /* Change color as needed */
+											border-radius: 5px;
+											font-size: 13px;
+											font-style: italic;
+										}
+									</style>
+							
+								
+								
+								
+									<!-- Insight Box -->
+									<div class="insight-box">
+										<h2 style="font-size: 20px;">For the curious readers!</h2>
+										<h3 style="font-size: 16px;">What are Neutron Stars?</h3>
+										&rarr; Neutron stars are the remnants of massive stars that have undergone a supernova explosion. These incredibly dense objects, packing more mass than our Sun into a city-sized radius, exhibit fascinating properties, including strong gravitational fields and unique behaviors under extreme conditions.
+									<p>&rarr; Pulsars are rapidly rotating neutron stars that emit strong radition from their magnetic poles. Due to their rotation these radiation appear to be pulsating to us.
+									</p>	
+									<h3 style="font-size: 16px;">How do we use them to test Eintein's theory of relativity?</h3>
+										&rarr; The radiation from these rotating stars experience extreme gravity of the star system and it is delayed in its arrival time on Earth due to multiple effects including gravitational time dilation. 
+										<br> &rarr; Through the exact measurement of the arrival times of these pulses of radiation, we are able to measure various phenomena affecting the pulse on its passage to the Earth including various effects implied by Einstein's Theory of General Relativity.
+										</div>
+								<br>
+								
+														<h2>Aim</h2>
+<p>To find hidden patterns indicating a relativistic effect and measure the effects that govern the motion of both the stars in the long-term data. </p>
+								<h2>Data</h2>
+								<ul>
+                                   
+								<li>More than 10's of TBs of data was collected for this project with the Green Bank, Parkes, and MeerKAT Radio Telescopes and the Fermi Gamma-ray space telescope over the last 13 years.
+								
+								</li>
+								
+								<li>All the data was first down-sampled and converted to a consistent frequency and time resolution. </li>
+								<h3> Intensity and frequency of the pulse profile of PSR J1012-4235 plotted as a function of pulse phase.</h3>
+								<div class="image-gallery">
+									<img src="images-shapiro-1012/J1012-4235_MKT_L-1.png" alt="" style="width:70%"/>
+									<div class="clear"></div>
+									</div>
+									<h2> Pre-processing</h2>
+									<li>Data Cleaning was performed with a data reduction pipeline that cleans Radio frequency interferances (RFI) - strong radio signals coming from the Earth itself- from the data by determining anomalies using different statistical metrics (including standard deviation, mean, range, and maximum
+										amplitude of the Fourier transform of the mean-subtracted
+										residuals.</li>
+										<li> Further residual strong RFIs were also removed manually for each data-set.</li>
+										<li>To improve the Signal-to-Noise Ratio of each of the pulse profiles (Intensity vs rotational phase of the Neutron star), further downsampling was performed manually.</li>
+									
+            <h2>Data Analysis</h2>
+<li>A standard template was first chosen by implementing various downsampling and averaging techniques for each data set and determining the best reduced chi-square for the fit with the data.</li>
+<li>Accurate Times of Arrival which are the time-stamps of each integrated pulse profile  with a common reference are then calculated by doing the cross-correlation of the each cube of data with its respective standard template.
+</li>
+<li>A scaling factor was then used to re-scale the uncertainties of ToAs to account for the un-modelled systematic effects in the data. This factor ensures conservative estimates of the uncertainties of the parameters. This is factor determined from the reduced chi-square of the whole data set.</li>	
+	<h2>Fitting rotating vector model</h2>
+	<p>To determine the Geometry of the system (its orientation), we perform a fit of the Rotating Vector Model (RVM) to the polarisation profile of the pulsar. The fit implies that the pulsar is likely not an orthogonal rotator and this explains why we do not see any inter-pulse in the pulse profile.
+	</p>
+	<div class="image-gallery">
+		<img src="images-shapiro-1012/1012_pol_profile.png" alt="" style="width:50%"/>
+		
+		<img src="images-shapiro-1012/corner_plot_RVM-1.png" alt="" style="width:40%"/>
+		
+		<div class="clear"></div>
+		</div>
+		<h2>Timing Analysis:</h2>
+		<li>To fit the data and find the best model parameters, we use a binary model called ELL1H+ model, this model is especially useful to avoid correlation between two parameters (T0 and w) in low-eccentricity binaries. It re-parameterises the existing model and fits for Tasc, and two Laplace-Lagrange parameters (epsilon1 and epsilon2). This model also includes a higher order term for eccentricity in the expansion of Romer delay. </li>
+<li> From the fit of ELL1H+ binary model on all the radio and gamma-ray data, we derived a phase-connected timing solution for this
+	system. This is a unique solution of the binary that
+	correctly predicts the pulse arrival times for every rotation of the
+	pulsar in the data-set. Below figure shows the post-fit ToA residuals as
+	a function of time.</li>
+	<div class="image-gallery">
+		<img src="images-shapiro-1012/residual-plot-1012-wgamma_winset.png" alt="" style="width:70%"/>
+		
+		<div class="clear"></div>
+		</div>
+<p>We were able to successfully measure the best-fit solution of the binary and astrometric parameters. We also measured, for the first time, the parallax of the system. We find a strong detection of Shapiro Delay- a time dilation effect on the light emitted from pulsar due to its passage from the gravitational potential of it's companion star. We measure 20-sigma and 200-sigma detection of the two of its parameters. Following figure shows a typical shapiro delay signature, with enhanced amplitude at the place where companion passes in front of the neutron star (and thus the region where light gets dilated).
+
+</p>
+
+<div class="image-gallery">
+	<img src="images-shapiro-1012/residual-shapiro-plot-1012.png" alt="" style="width:70%"/>
+	
+	<div class="clear"></div>
+	</div>
+
+	<h2>Comparing Gamma-ray and radio pulse profiles</h2>
+
+<div class="image-gallery">
+	<img src="images-shapiro-1012/J1012-4235_radio_gamma.png" alt="" style="width:70%"/>
+	
+	<div class="clear"></div>
+	</div>
+
+	<p>Unlike in radio, we do see a second peak in the pulsed emission, which is superficially consistent with the previously mentioned idea of the orthogonal rotator. However, the pulse morphology seen here is similar to that of most 𝛾-ray pulsars (Smith et al. 2023), where a single radio pulse is followed, after a small offset in phase (which is visible here) by two strong peaks in the 𝛾-ray emission, linked by a bridge of emission, which is also faintly visible here. This is clear evidence for the fact that the radio and gamma-ray emission do not generally originate in the same region of
+		the pulsar magnetosphere.</p>
+
+<h2>Determination of the masses</h2>
+
+<p>In order to better understand the correlations between the Shapiro delay parameters and better estimate their uncertainties and the uncertainties on the masses and orbital inclination, we performed Bayesian study of the masses and orbital inclination of the system. </p>
+<li>First, we created a uniform grid of points on the (cos𝑖 − 𝑀c) plane and derived the best-fit 𝜒2 values from the fit of this model on each of the points in this grid.</li> 
+	<li>Second, these 𝜒2 values are then converted to a Bayesian likelihood using the relation by Splaver et al. (2002). The likelihoods are then used in the calculation of joint posterior probability density functions (PDFs), both in the original plane and also in the (𝑀p − 𝑀c) plane. </li>
+	<p>Below, we plot the Shapiro delay parameters derived from the ELL1H+ model on the (cos𝑖 − 𝑀c) and (𝑀p − 𝑀c) planes, the black contours represent the 39% (inner) and 85% (outer) confidence ellipses on the joint posterior pdfs, which essentially represent the 1-𝜎 and 2-𝜎 error bars in 1-D PDFs. The corner plots show the marginalised 1-D posterior PDFs for 𝑀c, 𝑀p, and cos𝑖. The vertical lines in these plots represent the median, 1-𝜎, and 2-𝜎-equivalent percentiles for each of these parameters.</p>
+
+	<div class="image-gallery">
+		<img src="images-shapiro-1012/MC-COSI-1012-final-1.png" alt="" style="width:40%"/>
+		<img src="images-shapiro-1012/MC-Mp-1012-final-1.png" alt="" style="width:40%"/>
+		
+		<div class="clear"></div>
+		</div>
+		<p>For exact values and uncertainties of the parameters, please see the paper: https://arxiv.org/pdf/2311.13563.pdf.
+		</p>
+<h2>Determination of Kinematic effects</h2>
+<p>Acceleration contributions to orbital period derivative due to kinematic effects as a function of distance. Orange and green curves show the vertical and differential accelerations from galactic disc while red curve shows the contribution from proper motion of the pulsar. Blue curve represents the total acceleration contribution. Distance uncertainty of 20% is assumed on the DM distance predictions from NE2001 model (purple shaded region) and YMW16 model (teal shaded region) while 1-𝜎 uncertainty is shown for the parallax measurement from timing (gray shaded region).
+</p>
+<div class="image-gallery">
+	<img src="images-shapiro-1012/Pbdot-dist-kinematics-1012-new-1.png" alt="" style="width:70%"/>
+	
+	<div class="clear"></div>
+	</div>
+
+<p>As we can see, the total contribution to observed orbital period derivative from the kinematic effects (blue curve) is extremely flat. This turns out to be one of the most interesting features of this system. Even with the relatively large distance uncertainty, this contribution is not only small but it has a small associated uncertainty. This has an important consequence: we will be able to obtain a tight constraint on the variation of the gravitational constant.
+</p>
+
+<h2>Conclusion</h2>
+<p>PSR J1012−4235 is a 3.1-ms pulsar in a wide binary (37.9 days) with a white dwarf companion. We detected, for the first time, a
+	strong relativistic Shapiro delay signature in PSR J1012−4235. Our detection is a result of the timing analysis of data, spanning 13
+	years, collected with the Green Bank, Parkes, and MeerKAT Radio Telescopes and the Fermi 𝛾-ray space telescope. We measured the
+	orthometric parameters for Shapiro delay and obtain a 22-𝜎 detection of ℎ3 parameter of 1.222(54) μs and a 200-𝜎 detection of 𝜍
+	of 0.9646(49). With the assumption of general relativity, these measurements constrained the pulsar mass (𝑀p = 1.44+0.13
+	−0.12 M),
+	the mass of the white dwarf companion (𝑀c = 0.270+0.016
+	−0.015 M) and the orbital inclination (𝑖 = 88.06+0.28
+	−0.25) deg. Including the
+	early 𝛾-ray data in our timing analysis facilitated a precise measurement of the proper motion of the system of 6.58(5) mas yr−1
+	. We
+	also showed that the system has an unusually small kinematic corrections to the measurement of orbital period derivative, thus it has the
+	potential to yield stringent constraints on the variation of the gravitational constant in the future.</p>
+
+<p><a href="https://arxiv.org/pdf/2311.13563.pdf">Link to paper</a></p>
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/tasha-gautam-phd-80567885/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/tgautam16" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
